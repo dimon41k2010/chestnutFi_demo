@@ -21,12 +21,6 @@ with sync_playwright() as playwright:
     # context = browser.new_context()
     # page = context.new_page()
 
-    # Wait for the element to be visible
-    # page.wait_for_selector("#element_id", state="visible")
-
-    # Click the element
-    # page.click("#element_id")
-
     page.goto("https://bootswatch.com/default/")
     email_input = page.get_by_label("Email address")
     email_input.highlight()
