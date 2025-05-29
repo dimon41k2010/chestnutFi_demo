@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+lib/
+Lib/
+bin/
+Scripts/
+Include/
+Lib64/
+local/
+python3.9/
+site-packages/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+
+# Playwright cache
+.playwright/
