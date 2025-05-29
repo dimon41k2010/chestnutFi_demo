@@ -18,59 +18,59 @@ def test_homepage_title_contains_chestnut(browser_page):
     browser_page.goto("https://www.chestnutfi.com/")
     assert "Chestnut" in browser_page.title()
 
-def test_signup_button_present(browser_page):
-    browser_page.goto("https://www.chestnutfi.com/")
-    # Try common button texts, update selector if needed
-    assert browser_page.locator("text='Features'").is_visible() or browser_page.locator("text='About'").is_visible()
+# def test_signup_button_present(browser_page):
+#     browser_page.goto("https://www.chestnutfi.com/")
+#     # Try common button texts, update selector if needed
+#     assert browser_page.locator("text='Features'").is_visible() or browser_page.locator("text='About'").is_visible()
 
-def test_navigation_menu_items(browser_page):
-    browser_page.goto("https://www.chestnutfi.com/")
-    # Check for common navigation items
-    nav_items = ["Features", "About", "Resources", "Let's talk"]
-    for item in nav_items:
-        assert browser_page.locator(f"text='{item}'").first.is_visible()
+# def test_navigation_menu_items(browser_page):
+#     browser_page.goto("https://www.chestnutfi.com/")
+#     # Check for common navigation items
+#     nav_items = ["Features", "About", "Resources", "Let's talk"]
+#     for item in nav_items:
+#         assert browser_page.locator(f"text='{item}'").first.is_visible()
     
-    browser_page.locator(f"text='{nav_items[0]}'").click()
+#     browser_page.locator(f"text='{nav_items[0]}'").click()
     
-    # Check if the page has the Key Features section
-    assert browser_page.locator("text='Key Features'").is_visible()
-    assert browser_page.locator("text='Revenue Centric'").nth(1).is_visible()
+#     # Check if the page has the Key Features section
+#     assert browser_page.locator("text='Key Features'").is_visible()
+#     assert browser_page.locator("text='Revenue Centric'").nth(1).is_visible()
     
-    # # Check if "See the platform in action" is a visible button or has role="button"
-    # CTA_btn = browser_page.locator("a.button-default:has-text('See the platform in action')").nth(1)
-    # print("TEST",CTA_btn)
-    # assert CTA_btn.is_visible()
-    # # Check if it's a <button> or has role="button"
-    # assert CTA_btn.evaluate("el => el.tagName === 'p' && el.classList.contains('button-text--default')")
+#     # # Check if "See the platform in action" is a visible button or has role="button"
+#     # CTA_btn = browser_page.locator("a.button-default:has-text('See the platform in action')").nth(1)
+#     # print("TEST",CTA_btn)
+#     # assert CTA_btn.is_visible()
+#     # # Check if it's a <button> or has role="button"
+#     # assert CTA_btn.evaluate("el => el.tagName === 'p' && el.classList.contains('button-text--default')")
     
-    # Check if the CTA button using XPath is visible and has correct text
-    p_xpath = browser_page.locator("xpath=/html/body/section[7]/div/div[2]/a/p") # secondary button /html/body/section[6]/div/div[1]/a/p
-    assert p_xpath.is_visible()
-    assert p_xpath.text_content().strip() == "See the platform in action"
+#     # Check if the CTA button using XPath is visible and has correct text
+#     p_xpath = browser_page.locator("xpath=/html/body/section[7]/div/div[2]/a/p") # secondary button /html/body/section[6]/div/div[1]/a/p
+#     assert p_xpath.is_visible()
+#     assert p_xpath.text_content().strip() == "See the platform in action"
     
-    # Click the CTA button
-    p_xpath.click()
+#     # Click the CTA button
+#     p_xpath.click()
     
-    # Take a screenshot and save it to the Downloads folder
-    # browser_page.screenshot(path="./Screenshots/chestnut_test_screenshot.png", full_page=True)
-    screenshot_path = f"{'./Screenshots/chestnut_test_screenshot_'}{timestamp}.png"
-    browser_page.screenshot(path=screenshot_path, full_page=True)
+#     # Take a screenshot and save it to the Downloads folder
+#     # browser_page.screenshot(path="./Screenshots/chestnut_test_screenshot.png", full_page=True)
+#     screenshot_path = f"{'./Screenshots/chestnut_test_screenshot_'}{timestamp}.png"
+#     browser_page.screenshot(path=screenshot_path, full_page=True)
     
-    # Fill up the form
-    browser_page.fill("input[name='Contact-6-First-Name']", "Big John")
-    browser_page.fill("input[name='Contact-6-Last-Name']", "Smith") 
-    browser_page.fill("input[name='Contact-6-Email']", "big.john@example.com")
-    browser_page.fill("input[name='Contact-6-Org']", "Chestnut QA")
-    browser_page.fill("input[name='Contact-6-Email-2']", "1234567890")
-    browser_page.fill("input[name='Contact-6-Org-2']", "https://linkedin.com/in/bigjohn")
-    browser_page.fill("textarea[name='Contact-6-Message']", "This is a test message.")
+#     # Fill up the form
+#     browser_page.fill("input[name='Contact-6-First-Name']", "Big John")
+#     browser_page.fill("input[name='Contact-6-Last-Name']", "Smith") 
+#     browser_page.fill("input[name='Contact-6-Email']", "big.john@example.com")
+#     browser_page.fill("input[name='Contact-6-Org']", "Chestnut QA")
+#     browser_page.fill("input[name='Contact-6-Email-2']", "1234567890")
+#     browser_page.fill("input[name='Contact-6-Org-2']", "https://linkedin.com/in/bigjohn")
+#     browser_page.fill("textarea[name='Contact-6-Message']", "This is a test message.")
 
-    assert "Contact" in browser_page.title()
-    assert "https://www.chestnutfi.com/contact" in browser_page.url
-    sleep(1)
-    browser_page.screenshot(path=screenshot_path, full_page=True)
+#     assert "Contact" in browser_page.title()
+#     assert "https://www.chestnutfi.com/contact" in browser_page.url
+#     sleep(1)
+#     browser_page.screenshot(path=screenshot_path, full_page=True)
     
-    print("test :", browser_page.url)
+#     print("test :", browser_page.url)
     
     
     

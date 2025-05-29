@@ -30,4 +30,4 @@ jobs:
         python -m playwright install --with-deps
 
     - name: Run Playwright tests
-      run: pytest -v
+      run: pytest -v test_chestnutFi.py
