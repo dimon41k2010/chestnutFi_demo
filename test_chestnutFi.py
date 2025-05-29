@@ -18,6 +18,7 @@ def test_homepage_title_contains_chestnut(browser_page):
     browser_page.goto("https://www.chestnutfi.com/")
     assert "Chestnut" in browser_page.title()
 
+# @pytest.mark.parametrize(("num", "expected"), ((1,1), (2, 2), (3, 3)))
 def test_signup_button_present(browser_page):
     browser_page.goto("https://www.chestnutfi.com/")
     # Try common button texts, update selector if needed
