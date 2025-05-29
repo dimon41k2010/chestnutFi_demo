@@ -39,3 +39,10 @@ jobs:
       env:
         DISPLAY: :99  # Pass the DISPLAY variable explicitly
       run: pytest -v test_chestnutFi.py
+
+    - name: Upload screenshots
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-screenshots
+        path: ./Screenshots
